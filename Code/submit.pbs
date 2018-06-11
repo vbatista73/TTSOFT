@@ -1,0 +1,10 @@
+#PBS -q esi
+#PBS -N ttSOFT_pyr
+#PBS -l nodes=1:ppn=12,mem=60gb
+#PBS -l walltime=24:00:00
+#PBS -m abe -M me@yale.edu
+
+cd $PBS_O_WORKDIR
+module load Apps/Matlab/R2014a
+matlab -nodisplay -nosplash -r tt_SOFT < /dev/null > tt_SOFT.out 2> tt_SOFT.err
+
